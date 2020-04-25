@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(45deg, #283c86, #45a247);
+}
+
+.wrapper {
+  width: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+header {
+  width: 100%;
+  height: 40vh;
+  background: linear-gradient(
+      45deg,
+      rgba(13, 27, 80, 0.5),
+      rgba(27, 70, 50, 0.7)
+    ),
+    url("../../assets/img/white-feather-on-black-background-4004374.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 20px 20px 0 0;
+
+  h1 {
+    color: whitesmoke;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+  }
+  .clock {
+    color: whitesmoke;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+
+    div {
+      margin: 0 5px;
+
+      &:last-child span {
+        background: #45a247;
+      }
+
+      span {
+        display: block;
+        padding: 17px;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px 15px 0;
+        background: #283c86;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  form {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input,
+    button {
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      border: none;
+      background-color: whitesmoke;
+    }
+    button {
+      color: #45a247;
+      background-color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: none;
+
+      &:hover {
+        background-color: #283c86;
+        color: #45a247;
+      }
+    }
+  }
+}
+
+#todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 50vh;
+  background: rgb(199, 199, 199);
+  overflow-y: auto;
+  border-radius: 0 0 0 30px;
+  padding: 5px 5px 10px 5px;
+
+  #todo-list {
+    min-width: 50%;
+    list-style: none;
+  }
+
+  .todo {
+    margin: 0.5rem;
+    color: #333333;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1.3s ease;
+
+    li {
+      flex: 1;
+      margin-right: 15px;
+    }
+  }
+
+  .complete-btn,
+  .trash-btn {
+    background-color: #283c86;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 0.6em;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.4s;
+  }
+
+  .complete-btn:hover {
+    color: #45a247;
+    transform: scale(1.1);
+  }
+
+  .trash-btn:hover {
+    color: #bb3219;
+    transform: scale(1.1);
+  }
+  .fa-trash,
+  .fa-check {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  /* .fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+  } */
+}
